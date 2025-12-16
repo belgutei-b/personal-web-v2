@@ -38,6 +38,11 @@ li p {
   margin: 0;
 }
 
+pre {
+  /* background-color: black; */
+  background-color: #f6f8fa !important;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

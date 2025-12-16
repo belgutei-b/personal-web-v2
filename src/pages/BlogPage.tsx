@@ -38,7 +38,7 @@ export default function BlogPage() {
           .use(rehypeKatex)
           .use(rehypePrettyCode, {
             grid: false,
-            theme: "catppuccin-mocha",
+            theme: "github-light",
           })
           .use(rehypeAutolinkHeadings, {
             behavior: "wrap",

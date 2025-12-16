@@ -10,7 +10,7 @@ export default function Blogs() {
   });
   return (
     <div>
-      <p className="text-xl text-stone-700 mb-8">Blogs</p>
+      <p className="text-xl font-semibold text-stone-700 mb-8 mt-5">Blogs</p>
       <div>
         {blogs.map((blog) => {
           return (
