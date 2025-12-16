@@ -1,3 +1,7 @@
+---
+title: Blog 1
+date: 16 December, 2025
+---
 # heading 1
 
 ## heading 2

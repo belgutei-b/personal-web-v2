@@ -2,6 +2,8 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { unified } from "unified";
 import "github-markdown-css/github-markdown-light.css";
+import matter from "gray-matter";
+import { Buffer } from "buffer";
 
 // remark
 import remarkParse from "remark-parse";
@@ -15,6 +17,8 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import "katex/dist/katex.min.css";
+
+(window as any).Buffer = Buffer;
 
 const allPaths = import.meta.glob("../posts/*.md", {
   query: "?raw",
@@ -30,6 +34,10 @@ export default function BlogPage() {
 
     if (allPaths[path]) {
       allPaths[path]().then(async (content) => {
+        const { content: mdContent, data: frontmatter } = matter(
+          content as string
+        );
+
         const fileHtml = await unified()
           .use(remarkParse)
           .use(remarkMath)
@@ -45,7 +53,7 @@ export default function BlogPage() {
             properties: { className: "heading-anchor" },
           })
           .use(rehypeStringify)
-          .process(content as string);
+          .process(mdContent);
         setContent(String(fileHtml));
       });
     } else {
