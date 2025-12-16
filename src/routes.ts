@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import Navbar from "./components/Navbar";
 import BlogPage from "./pages/BlogPage";
+import Uni from "./pages/Uni";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "blogs/:blogTitle",
         Component: BlogPage,
+      },
+      {
+        path: "uni",
+        Component: Uni,
       },
     ],
   },
