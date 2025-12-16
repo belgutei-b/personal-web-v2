@@ -38,10 +38,10 @@ export default function BlogPage() {
           .use(rehypeKatex)
           .use(rehypePrettyCode, {
             grid: false,
-            theme: "github-dark",
+            theme: "catppuccin-mocha",
           })
           .use(rehypeAutolinkHeadings, {
-            behavior: "prepend",
+            behavior: "wrap",
             properties: { className: "heading-anchor" },
           })
           .use(rehypeStringify)

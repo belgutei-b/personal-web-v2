@@ -12,6 +12,32 @@ a:hover {
   @apply underline underline-offset-2;
 }
 
+.markdown-body h1:hover {
+  @apply cursor-pointer;
+}
+
+.markdown-body h1 a,
+.markdown-body h2 a,
+.markdown-body h3 a,
+.markdown-body h4 a,
+.markdown-body h5 a,
+.markdown-body h6 a {
+  @apply text-stone-700;
+}
+
+.markdown-body ul {
+  @apply list-disc;
+}
+
+.markdown-body ol {
+  @apply list-decimal;
+}
+
+li p {
+  display: inline;
+  margin: 0;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
