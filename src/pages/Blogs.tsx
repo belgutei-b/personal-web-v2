@@ -10,7 +10,7 @@ export default function Blogs() {
 
   const blogs = Object.keys(allPostPaths).map((path) => {
     return {
-      path: path.slice(3, path.length),
+      path: path.slice(9, path.length - 3),
       loadFrontmatter: allPostPaths[path] as () => Promise<string>,
     };
   });
@@ -48,7 +48,7 @@ export default function Blogs() {
               key={blog.path}
               className="border-t border-stone-300 py-3 flex justify-between"
             >
-              <NavLink to={blog.title} end>
+              <NavLink to={blog.path} end>
                 {blog.title}
               </NavLink>
               <p className="text-stone-700">{blog.date}</p>
