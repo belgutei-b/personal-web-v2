@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-a {
+/* a {
   @apply font-medium text-lg text-stone-700;
-}
+} */
 
 a.active {
   @apply underline underline-offset-2;
