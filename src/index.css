@@ -39,8 +39,11 @@ li p {
 }
 
 pre {
-  /* background-color: black; */
   background-color: #f6f8fa !important;
+}
+
+.home-link {
+  @apply underline underline-offset-2 text-blue-700;
 }
 
 /* :root {

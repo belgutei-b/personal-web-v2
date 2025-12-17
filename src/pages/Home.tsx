@@ -7,9 +7,13 @@ export default function Home() {
       <div className="border-b border-stone-300 py-5">
         <div className="text-lg pb-2 font-semibold">About me</div>
         <div>
-          I love programming, especially Competitive Programming, Web
-          Development, Systems and Operatings Systems (OS). Also, I like to{" "}
-          <NavLink to="/run" end>
+          I love{" "}
+          <NavLink to="https://github.com/belgutei-b" className="home-link" end>
+            programming
+          </NavLink>
+          , especially Competitive Programming, Web Development, Systems and
+          Operatings Systems (OS). Also, I like to{" "}
+          <NavLink to="/run" className="home-link" end>
             run
           </NavLink>
           .
@@ -19,11 +23,7 @@ export default function Home() {
         <div className="text-lg pb-2 font-semibold">University</div>
         <div>
           I study{" "}
-          <NavLink
-            to="uni"
-            className="underline underline-offset-2 text-blue-700"
-            end
-          >
+          <NavLink to="uni" className="home-link" end>
             Computer Science at UNSW
           </NavLink>
           . On campus, I'm involved in CPMSoc, CSESoc and RunSoc.
@@ -35,10 +35,10 @@ export default function Home() {
         </div>
         <div>
           I have been training competitive programming since I was 15.
-          Currently, I am{" "}
+          Currently, I am a{" "}
           <NavLink
             to="https://codeforces.com/profile/B.Belgutei"
-            className="underline underline-offset-2 text-blue-700"
+            className="home-link"
             end
           >
             Candidate Master on Codeforces
@@ -52,7 +52,7 @@ export default function Home() {
           I'm a 2x IOI participant, 2x 3rd place in{" "}
           <NavLink
             to="https://unswcpmsoc.com/competitions/23t1-imc/"
-            className="underline underline-offset-2 text-blue-700"
+            className="home-link"
             end
           >
             IMC-Trading Coding Competition (Advanced Division)
@@ -60,12 +60,43 @@ export default function Home() {
           and a winner of{" "}
           <NavLink
             to="https://sppcontests.org/wisetech-global-challenge-results/"
-            className="underline underline-offset-2 text-blue-700"
+            className="home-link"
             end
           >
             WiseTech Global Challenge-2025
           </NavLink>
           .
+        </div>
+      </div>
+      <div className="border-b border-stone-300 py-5">
+        <div className="text-lg pb-2 font-semibold">Contact me</div>
+        <div className="">
+          <NavLink
+            to="mailto:belgutei0323@gmail.com"
+            className="underline underline-offset-2 mr-3"
+            target="_blank"
+            end
+          >
+            Email
+          </NavLink>
+          ·
+          <NavLink
+            to="https://github.com/belgutei-b"
+            className="underline underline-offset-2 ml-3 mr-3"
+            target="_blank"
+            end
+          >
+            Github
+          </NavLink>
+          ·
+          <NavLink
+            className="underline underline-offset-2 ml-3"
+            to="https://www.linkedin.com/in/belgutei0323/"
+            target="_blank"
+            end
+          >
+            Linkedin
+          </NavLink>
         </div>
       </div>
     </div>

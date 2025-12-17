@@ -76,7 +76,7 @@ export default function Uni() {
             <p className="text-xl text-stone-700 font-semibold">{term.title}</p>
             <ul className="list-disc list-inside">
               {term.courses.map((course) => {
-                return <li className="text-stone-500 mt-2">{course}</li>;
+                return <li className="mt-2">{course}</li>;
               })}
             </ul>
           </div>
