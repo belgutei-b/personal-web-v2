@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router";
+import MenuSvg from "../assets/menu.svg?react"
 
 export default function Navbar() {
   return (
@@ -9,7 +10,10 @@ export default function Navbar() {
             Belgutei
           </NavLink>
         </div>
-        <div className="space-x-5">
+        <div className="md:hidden">
+          <MenuSvg className="h-5 w-5 text-blue-400" />
+        </div>
+        <div className="hidden md:flex space-x-5">
           <NavLink to="/blogs" end>
             Blogs
           </NavLink>
