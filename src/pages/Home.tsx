@@ -3,8 +3,8 @@ import { NavLink } from "react-router";
 export default function Home() {
   return (
     <div className="">
-      <p>Hello! I'm Belgutei Byambadorj.</p>
-      <div className="border-b border-stone-300 py-5">
+      <p className="ml-2 md:ml-0">Hello! I'm Belgutei Byambadorj.</p>
+      <div className="home-section">
         <div className="text-lg pb-2 font-semibold">About me</div>
         <div>
           I love{" "}
@@ -19,7 +19,7 @@ export default function Home() {
           .
         </div>
       </div>
-      <div className="border-b border-stone-300 py-5">
+      <div className="home-section">
         <div className="text-lg pb-2 font-semibold">University</div>
         <div>
           I study{" "}
@@ -29,7 +29,7 @@ export default function Home() {
           . On campus, I'm involved in CPMSoc, CSESoc and RunSoc.
         </div>
       </div>
-      <div className="border-b border-stone-300 py-5">
+      <div className="home-section">
         <div className="text-lg pb-2 font-semibold">
           Competitive Programming
         </div>
@@ -46,7 +46,7 @@ export default function Home() {
           and solved over 2000 algorithms and data structure problems.
         </div>
       </div>
-      <div className="border-b border-stone-300 py-5">
+      <div className="home-section">
         <div className="text-lg pb-2 font-semibold">Achievements</div>
         <div>
           I'm a 2x IOI participant, 2x 3rd place in{" "}
@@ -68,7 +68,7 @@ export default function Home() {
           .
         </div>
       </div>
-      <div className="border-b border-stone-300 py-5">
+      <div className="home-section">
         <div className="text-lg pb-2 font-semibold">Contact me</div>
         <div className="">
           <NavLink

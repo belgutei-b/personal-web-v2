@@ -40,13 +40,15 @@ export default function Blogs() {
 
   return (
     <div>
-      <p className="text-xl font-semibold text-stone-700 mb-8 mt-5">Blogs</p>
+      <p className="text-xl font-semibold text-stone-700 mb-8 mt-5 px-3 md:px-0">
+        Blogs
+      </p>
       <div>
         {blogList.map((blog) => {
           return (
             <div
               key={blog.path}
-              className="border-t border-stone-300 py-3 flex justify-between"
+              className="border-t border-stone-300 py-3 flex justify-between px-3 md:px-0"
             >
               <NavLink to={blog.path} end>
                 {blog.title}

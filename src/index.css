@@ -46,6 +46,10 @@ pre {
   @apply underline underline-offset-2 text-blue-700;
 }
 
+.home-section {
+  @apply border-b border-stone-300 py-5 px-2 md:px-0;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
