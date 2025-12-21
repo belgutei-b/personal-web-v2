@@ -1,14 +1,14 @@
 import { createBrowserRouter } from "react-router";
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
-import Navbar from "./components/Navbar";
+import MainLayout from "./components/MainLayout";
 import BlogPage from "./pages/BlogPage";
 import Uni from "./pages/Uni";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: Navbar,
+    Component: MainLayout,
     children: [
       { index: true, Component: Home },
       {

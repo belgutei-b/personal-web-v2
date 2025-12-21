@@ -73,7 +73,7 @@ export default function Home() {
         <div className="">
           <NavLink
             to="mailto:belgutei0323@gmail.com"
-            className="underline underline-offset-2 mr-3"
+            className="home-link mr-3"
             target="_blank"
             end
           >
@@ -82,7 +82,7 @@ export default function Home() {
           ·
           <NavLink
             to="https://github.com/belgutei-b"
-            className="underline underline-offset-2 ml-3 mr-3"
+            className="home-link ml-3 mr-3"
             target="_blank"
             end
           >
@@ -90,7 +90,7 @@ export default function Home() {
           </NavLink>
           ·
           <NavLink
-            className="underline underline-offset-2 ml-3"
+            className="home-link ml-3"
             to="https://www.linkedin.com/in/belgutei0323/"
             target="_blank"
             end

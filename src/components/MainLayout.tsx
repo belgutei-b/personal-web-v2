@@ -1,9 +1,11 @@
-import { NavLink, Outlet } from "react-router";
+import { NavLink, Outlet, useNavigation } from "react-router";
 import MenuSvg from "../assets/menu.svg?react";
 import { useState } from "react";
 
-export default function Navbar() {
+export default function MainLayout() {
   const [open, setOpen] = useState(false);
+  const navigation = useNavigation();
+  const isNavigating = Boolean(navigation.location);
   return (
     <div className="w-full md:w-5/8 xl:w-3/8 h-screen flex flex-col mx-auto">
       <nav className="w-full mb-3 flex justify-between pt-5 pb-5 border-b border-stone-300">
@@ -58,6 +60,7 @@ export default function Navbar() {
           </NavLink>
         </div>
       </nav>
+      {isNavigating && <div>Loading</div>}
       <Outlet />
     </div>
   );

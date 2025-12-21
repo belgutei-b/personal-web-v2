@@ -28,6 +28,7 @@ const allPaths = import.meta.glob("../posts/*.md", {
 export default function BlogPage() {
   const { blogTitle } = useParams();
   const [content, setContent] = useState("");
+  const [isFetched, setIsFetched] = useState(false);
 
   useEffect(() => {
     const path = `../posts/${blogTitle}.md`;
@@ -59,8 +60,12 @@ export default function BlogPage() {
     } else {
       setContent("Not found");
     }
+    setIsFetched(true);
   }, [blogTitle]);
 
+  if (isFetched) {
+    return <div className="ml-2">Loading...</div>;
+  }
   // remark (parsing markdown)
   // rehype (highlighting)
   return (
