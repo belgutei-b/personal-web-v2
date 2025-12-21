@@ -2,6 +2,7 @@
 title: Blog 1
 date: 16 December, 2025
 ---
+
 # heading 1
 
 ## heading 2
@@ -15,7 +16,6 @@ _italics_
 ```js
 console.log("hello");
 ```
-
 
 ```js
 export default function Uni() {
@@ -38,6 +38,8 @@ export default function Uni() {
 }
 ```
 
+---
+
 - one
 - two
 - three
@@ -46,23 +48,24 @@ export default function Uni() {
 2. two
 3. three
 
-
-1. Main item one
-2. Main item two
-3. Main item three
-
+4. Main item one
+5. Main item two
+6. Main item three
 
 `something`
 
 1. Main item one
-    1. Sub-item one
-    2. Sub-item two
+   1. Sub-item one
+   2. Sub-item two
 2. Main item two
-    1. Another sub-item
-    2. And another
+   1. Another sub-item
+   2. And another
 3. Main item three
-
 
 testing
 
 The lift coefficient ($C_L$) is a dimensionless coefficient.
+
+### Image
+
+![Alt text](/images/firefox.png)

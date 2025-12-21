@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-/* a {
-  @apply font-medium text-lg text-stone-700;
-} */
-
 a.active {
   @apply underline underline-offset-2;
 }
@@ -12,25 +8,29 @@ a:hover {
   @apply underline underline-offset-2;
 }
 
-.markdown-body h1:hover {
+.md-body h1:hover {
   @apply cursor-pointer;
 }
 
-.markdown-body h1 a,
-.markdown-body h2 a,
-.markdown-body h3 a,
-.markdown-body h4 a,
-.markdown-body h5 a,
-.markdown-body h6 a {
+.md-body h1 a,
+.md-body h2 a,
+.md-body h3 a,
+.md-body h4 a,
+.md-body h5 a,
+.md-body h6 a {
   @apply text-stone-700;
 }
 
-.markdown-body ul {
+.md-body ul {
   @apply list-disc;
 }
 
-.markdown-body ol {
+.md-body ol {
   @apply list-decimal;
+}
+
+.md-body img {
+  @apply h-50 md:h-80;
 }
 
 li p {

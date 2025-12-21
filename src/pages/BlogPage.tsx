@@ -63,14 +63,14 @@ export default function BlogPage() {
     setIsFetched(true);
   }, [blogTitle]);
 
-  if (isFetched) {
+  if (!isFetched) {
     return <div className="ml-2">Loading...</div>;
   }
   // remark (parsing markdown)
   // rehype (highlighting)
   return (
     <div
-      className="markdown-body prose max-w-none"
+      className="markdown-body md-body prose max-w-none px-4 md:px-0"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );
