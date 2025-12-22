@@ -38,6 +38,7 @@ export default function BlogPage() {
         const { content: mdContent, data: frontmatter } = matter(
           content as string
         );
+        console.log(frontmatter);
 
         const fileHtml = await unified()
           .use(remarkParse)
