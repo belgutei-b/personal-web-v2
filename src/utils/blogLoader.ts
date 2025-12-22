@@ -15,7 +15,6 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import "katex/dist/katex.min.css";
-import type { LoaderFunctionArgs } from "react-router";
 
 (window as any).Buffer = Buffer;
 
@@ -23,9 +22,8 @@ function timeout(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export async function blogLoader({ params }: LoaderFunctionArgs) {
+export async function blogLoader(blogTitle: string | undefined) {
   try {
-    const { blogTitle } = params;
     if (!blogTitle) {
       throw new Error("Not found");
     }

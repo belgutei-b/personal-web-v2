@@ -1,8 +1,23 @@
-import { useLoaderData, Await } from "react-router";
-import { Suspense } from "react";
+import { useParams } from "react-router";
+import { useEffect, useState } from "react";
+import { blogLoader } from "../utils/blogLoader";
 
 export default function BlogPage() {
-  const content = useLoaderData();
+  const { blogTitle } = useParams();
+  const [content, setContent] = useState<string | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    blogLoader(blogTitle).then((html) => {
+      if (mounted) setContent(html);
+    });
+    return () => {
+      mounted = false;
+    };
+  }, [blogTitle]);
+
+  if (!content) return <div>Loading.......</div>;
+
   return (
     <div
       className="markdown-body md-body prose max-w-none px-2 md:px-0"
