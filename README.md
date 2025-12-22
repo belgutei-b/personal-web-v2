@@ -7,4 +7,5 @@ It converts markdown to HTML using remark plugin and then uses rehype to transfo
 
 - React.js
 - TailwindCSS
-- remark-rehype
+- Typescript
+- remark & rehype

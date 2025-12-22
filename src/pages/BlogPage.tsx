@@ -16,7 +16,7 @@ export default function BlogPage() {
     };
   }, [blogTitle]);
 
-  if (!content) return <div>Loading.......</div>;
+  if (!content) return <div className="ml-2 md:ml-0">Loading...</div>;
 
   return (
     <div
