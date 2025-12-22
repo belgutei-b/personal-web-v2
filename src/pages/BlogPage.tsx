@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { blogLoader } from "../utils/blogLoader";
+import { blogLoader } from "../utils/blog-utils";
 
 export default function BlogPage() {
   const { blogTitle } = useParams();

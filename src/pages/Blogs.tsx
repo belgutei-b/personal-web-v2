@@ -1,42 +1,22 @@
 import { NavLink } from "react-router";
 import { useState, useEffect } from "react";
-import matter from "gray-matter";
+import { getBlogs } from "../utils/blog-utils";
+import type { BlogType } from "../types/blog.types";
 
 export default function Blogs() {
-  const allPostPaths = import.meta.glob("../posts/*.md", {
-    query: "?raw",
-    import: "default",
-  });
-
-  const blogs = Object.keys(allPostPaths).map((path) => {
-    return {
-      path: path.slice(9, path.length - 3),
-      loadFrontmatter: allPostPaths[path] as () => Promise<string>,
-    };
-  });
-
-  const [blogList, setBlogList] = useState<
-    { title: string; date?: string; path: string }[]
-  >([]);
+  const [blogs, setBlogs] = useState<BlogType[] | null>(null);
 
   useEffect(() => {
-    async function loadFrontmatters() {
-      const list = await Promise.all(
-        blogs.map(async (blog) => {
-          const raw = await blog.loadFrontmatter();
-          const { data } = matter(raw);
-          return {
-            title: data.title || "NO TITLE",
-            date: data.date || "NO DATE",
-            path: blog.path,
-          };
-        })
-      );
-      console.log(list);
-      setBlogList(list);
-    }
-    loadFrontmatters();
+    let mounted = true;
+    getBlogs().then((receivedBlogs) => {
+      if (mounted) setBlogs(receivedBlogs);
+    });
+    return () => {
+      mounted = false;
+    };
   }, []);
+
+  if (!blogs) return <div>Loading...</div>;
 
   return (
     <div>
@@ -44,7 +24,7 @@ export default function Blogs() {
         Blogs
       </p>
       <div>
-        {blogList.map((blog) => {
+        {blogs.map((blog) => {
           return (
             <div
               key={blog.path}

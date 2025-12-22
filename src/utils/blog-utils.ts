@@ -15,12 +15,13 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import "katex/dist/katex.min.css";
+import type { BlogType } from "../types/blog.types";
 
 (window as any).Buffer = Buffer;
 
-function timeout(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+// function timeout(ms: number) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
 
 export async function blogLoader(blogTitle: string | undefined) {
   try {
@@ -54,11 +55,39 @@ export async function blogLoader(blogTitle: string | undefined) {
       .use(rehypeStringify)
       .process(content);
 
-    await timeout(2000); // waits for 2 seconds
+    // await timeout(2000);
     // remark (parsing markdown)
     // rehype (highlighting)
     return String(html);
   } catch (err) {
     return String("Not found");
   }
+}
+
+export async function getBlogs() {
+  const allPostPaths = import.meta.glob("../posts/*.md", {
+    query: "?raw",
+    import: "default",
+  });
+
+  const rawBlogs = Object.keys(allPostPaths).map((path) => {
+    return {
+      path: path.slice(9, path.length - 3),
+      loadFrontmatter: allPostPaths[path] as () => Promise<string>,
+    };
+  });
+
+  const blogs: BlogType[] = [];
+  for (const blog of rawBlogs) {
+    const raw = await blog.loadFrontmatter();
+    const { data } = matter(raw);
+    blogs.push({
+      title: data.title || "NO TITLE",
+      date: data.date || "NO DATE",
+      path: blog.path,
+    });
+  }
+
+  // await timeout(3000);
+  return blogs;
 }
