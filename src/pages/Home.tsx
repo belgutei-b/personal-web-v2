@@ -8,7 +8,12 @@ export default function Home() {
         <div className="home-title">About me</div>
         <div className="home-desc">
           I love{" "}
-          <NavLink to="https://github.com/belgutei-b" className="home-link" end>
+          <NavLink
+            to="https://github.com/belgutei-b"
+            className="home-link"
+            target="_blank"
+            end
+          >
             programming
           </NavLink>
           , especially Competitive Programming, Web Development, Systems and
@@ -37,6 +42,7 @@ export default function Home() {
           <NavLink
             to="https://codeforces.com/profile/B.Belgutei"
             className="home-link"
+            target="_blank"
             end
           >
             Candidate Master on Codeforces
@@ -51,6 +57,7 @@ export default function Home() {
           <NavLink
             to="https://unswcpmsoc.com/competitions/23t1-imc/"
             className="home-link"
+            target="_blank"
             end
           >
             IMC-Trading Coding Competition (Advanced Division)
@@ -59,6 +66,7 @@ export default function Home() {
           <NavLink
             to="https://sppcontests.org/wisetech-global-challenge-results/"
             className="home-link"
+            target="_blank"
             end
           >
             WiseTech Global Challenge-2025
