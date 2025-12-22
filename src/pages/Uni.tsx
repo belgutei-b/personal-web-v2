@@ -72,7 +72,7 @@ export default function Uni() {
     <div>
       {terms.map((term) => {
         return (
-          <div className="py-5 border-b border-stone-300">
+          <div className="py-5 border-b border-stone-300 px-2">
             <p className="text-xl text-stone-700 font-semibold">{term.title}</p>
             <ul className="list-disc list-inside">
               {term.courses.map((course) => {

@@ -5,8 +5,8 @@ export default function Home() {
     <div className="">
       <p className="ml-2 md:ml-0">Hello! I'm Belgutei Byambadorj.</p>
       <div className="home-section">
-        <div className="text-lg pb-2 font-semibold">About me</div>
-        <div>
+        <div className="home-title">About me</div>
+        <div className="home-desc">
           I love{" "}
           <NavLink to="https://github.com/belgutei-b" className="home-link" end>
             programming
@@ -20,8 +20,8 @@ export default function Home() {
         </div>
       </div>
       <div className="home-section">
-        <div className="text-lg pb-2 font-semibold">University</div>
-        <div>
+        <div className="home-title">University</div>
+        <div className="home-desc">
           I study{" "}
           <NavLink to="uni" className="home-link" end>
             Computer Science at UNSW
@@ -30,10 +30,8 @@ export default function Home() {
         </div>
       </div>
       <div className="home-section">
-        <div className="text-lg pb-2 font-semibold">
-          Competitive Programming
-        </div>
-        <div>
+        <div className="home-title">Competitive Programming</div>
+        <div className="home-desc">
           I have been training competitive programming since I was 15.
           Currently, I am a{" "}
           <NavLink
@@ -47,8 +45,8 @@ export default function Home() {
         </div>
       </div>
       <div className="home-section">
-        <div className="text-lg pb-2 font-semibold">Achievements</div>
-        <div>
+        <div className="home-title">Achievements</div>
+        <div className="home-desc">
           I'm a 2x IOI participant, 2x 3rd place in{" "}
           <NavLink
             to="https://unswcpmsoc.com/competitions/23t1-imc/"
@@ -69,8 +67,8 @@ export default function Home() {
         </div>
       </div>
       <div className="home-section">
-        <div className="text-lg pb-2 font-semibold">Contact me</div>
-        <div className="">
+        <div className="home-title">Contact me</div>
+        <div className="home-desc">
           <NavLink
             to="mailto:belgutei0323@gmail.com"
             className="home-link mr-3"

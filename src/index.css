@@ -47,7 +47,15 @@ pre {
 }
 
 .home-section {
-  @apply border-b border-stone-300 py-5 px-2 md:px-0;
+  @apply border-b border-stone-300 py-3 md:py-5 px-2 md:px-0;
+}
+
+.home-title {
+  @apply text-lg pb-1 md:pb-2 font-semibold;
+}
+
+.home-desc {
+  @apply text-sm md:text-base;
 }
 
 /* :root {
