@@ -72,11 +72,18 @@ export default function Uni() {
     <div>
       {terms.map((term) => {
         return (
-          <div className="pt-0 md:pt-5 pb-5 border-b border-stone-300 px-2">
+          <div
+            key={term.title}
+            className="pt-0 md:pt-5 pb-5 border-b border-stone-300 px-2"
+          >
             <p className="text-xl text-stone-700 font-semibold">{term.title}</p>
             <ul className="list-disc list-inside">
               {term.courses.map((course) => {
-                return <li className="mt-2">{course}</li>;
+                return (
+                  <li key={course} className="mt-2">
+                    {course}
+                  </li>
+                );
               })}
             </ul>
           </div>

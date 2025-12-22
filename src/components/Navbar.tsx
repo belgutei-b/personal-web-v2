@@ -24,7 +24,7 @@ export default function Navbar() {
           className={`fixed top-0 right-0 h-full w-50 bg-white shadow-lg transform transition-transform duration-500 ease-in-out z-50
               ${isOpen ? "translate-x-0" : "translate-x-full"}`}
         >
-          <div className="flex flex-col items-end p-6 space-y-4">
+          <div className="flex flex-col items-end p-6 space-y-4 font-semibold">
             <NavLink to="/" onClick={closeDrawer} end>
               Home
             </NavLink>

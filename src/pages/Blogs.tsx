@@ -50,7 +50,13 @@ export default function Blogs() {
               key={blog.path}
               className="border-t border-stone-300 py-3 flex justify-between px-3 md:px-0"
             >
-              <NavLink to={blog.path} end>
+              <NavLink
+                to={blog.path}
+                className={({ isActive, isPending }) =>
+                  isActive ? "text-blue-700" : isPending ? "disabled" : ""
+                }
+                end
+              >
                 {blog.title}
               </NavLink>
               <p className="text-stone-700">{blog.date}</p>
