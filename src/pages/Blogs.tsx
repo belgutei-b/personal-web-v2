@@ -40,7 +40,7 @@ export default function Blogs() {
 
   return (
     <div>
-      <p className="text-xl font-semibold text-stone-700 mb-8 mt-5 px-3 md:px-0">
+      <p className="text-xl font-semibold text-stone-700 mb-5 pt-0 md:pt-5 px-2 md:px-0">
         Blogs
       </p>
       <div>

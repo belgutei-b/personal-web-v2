@@ -71,7 +71,7 @@ export default function BlogPage() {
   // rehype (highlighting)
   return (
     <div
-      className="markdown-body md-body prose max-w-none px-4 md:px-0"
+      className="markdown-body md-body prose max-w-none px-2 md:px-0"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );

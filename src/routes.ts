@@ -4,6 +4,7 @@ import Blogs from "./pages/Blogs";
 import MainLayout from "./components/MainLayout";
 import BlogPage from "./pages/BlogPage";
 import Uni from "./pages/Uni";
+import Notfound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "uni",
         Component: Uni,
+      },
+      {
+        path: "*",
+        Component: Notfound,
       },
     ],
   },
