@@ -6,7 +6,6 @@ import router from "./routes.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <title>Belgutei</title>
     <RouterProvider router={router} />
   </StrictMode>
 );
