@@ -8,7 +8,8 @@ export default function BlogPage() {
 
   useEffect(() => {
     let mounted = true;
-    blogLoader(blogTitle).then((html) => {
+    const isDarkMode = localStorage.theme === "dark";
+    blogLoader(blogTitle, isDarkMode).then((html) => {
       if (mounted) setContent(html);
     });
     return () => {

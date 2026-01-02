@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <p className="ml-2 md:ml-0">Hello! I'm Belgutei Byambadorj.</p>
       <div className="home-section">
         <div className="home-title">About me</div>

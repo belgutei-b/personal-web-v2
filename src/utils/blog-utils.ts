@@ -1,5 +1,6 @@
 import { unified } from "unified";
 import "github-markdown-css/github-markdown-light.css";
+import "github-markdown-css/github-markdown-dark.css";
 import matter from "gray-matter";
 import { Buffer } from "buffer";
 
@@ -23,7 +24,10 @@ import type { BlogType } from "../types/blog.types";
 //   return new Promise((resolve) => setTimeout(resolve, ms));
 // }
 
-export async function blogLoader(blogTitle: string | undefined) {
+export async function blogLoader(
+  blogTitle: string | undefined,
+  isDarkTheme: boolean
+) {
   try {
     if (!blogTitle) {
       throw new Error("Not found");
@@ -46,7 +50,7 @@ export async function blogLoader(blogTitle: string | undefined) {
       .use(rehypeKatex)
       .use(rehypePrettyCode, {
         grid: false,
-        theme: "github-light",
+        theme: isDarkTheme ? "github-dark" : "github-light",
       })
       .use(rehypeAutolinkHeadings, {
         behavior: "wrap",
