@@ -1,16 +1,17 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 .dark {
   @apply bg-neutral-900;
 }
 
 a {
-  @apply text-stone-100;
+  @apply dark:text-stone-100;
 }
 
 p,
 li {
-  @apply text-stone-100;
+  @apply dark:text-stone-100;
 }
 
 a.active {
@@ -31,7 +32,7 @@ a:hover {
 .md-body h4 a,
 .md-body h5 a,
 .md-body h6 a {
-  @apply text-stone-700;
+  @apply text-stone-700 dark:text-stone-200;
 }
 
 .md-body {
@@ -55,10 +56,6 @@ li p {
   margin: 0;
 }
 
-/* pre {
-  background-color: #f6f8fa !important;
-} */
-
 .home-link {
   @apply underline underline-offset-2 text-blue-700 dark:text-emerald-400;
 }
@@ -68,11 +65,11 @@ li p {
 }
 
 .home-title {
-  @apply text-lg pb-2 font-semibold dark:text-stone-100;
+  @apply text-black text-lg pb-2 font-semibold dark:text-stone-100;
 }
 
 .home-desc {
-  @apply text-base dark:text-stone-200;
+  @apply text-black text-base dark:text-stone-200;
 }
 
 /* :root {
