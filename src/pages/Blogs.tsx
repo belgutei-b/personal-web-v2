@@ -16,7 +16,7 @@ export default function Blogs() {
     };
   }, []);
 
-  if (!blogs) return <div className="pl-2 md:pl-0">Loading...</div>;
+  if (!blogs) return <p className="pl-2 md:pl-0">Loading...</p>;
 
   return (
     <div>

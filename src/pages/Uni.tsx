@@ -76,7 +76,7 @@ export default function Uni() {
             key={term.title}
             className="pt-0 md:pt-5 pb-5 border-b border-stone-300 px-2"
           >
-            <p className="text-xl text-stone-700 font-semibold dark:text-emerald-400">
+            <p className="text-xl text-stone-700 font-semibold dark:text-emerald-400!">
               {term.title}
             </p>
             <ul className="list-disc list-inside">
