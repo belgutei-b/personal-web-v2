@@ -11,7 +11,7 @@ a {
 
 p,
 li {
-  @apply dark:text-stone-100;
+  @apply dark:text-stone-100 text-black;
 }
 
 a.active {
@@ -20,6 +20,16 @@ a.active {
 
 a:hover {
   @apply underline underline-offset-2;
+}
+
+.markdown-body {
+  color-scheme: light;
+  background-color: white !important;
+}
+
+.dark .markdown-body {
+  color-scheme: dark;
+  background-color: oklch(20.5% 0 0) !important;
 }
 
 .md-body h1:hover {
@@ -33,10 +43,6 @@ a:hover {
 .md-body h5 a,
 .md-body h6 a {
   @apply text-stone-700 dark:text-stone-200;
-}
-
-.md-body {
-  background-color: oklch(20.5% 0 0) !important;
 }
 
 .md-body ul {

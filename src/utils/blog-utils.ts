@@ -1,6 +1,6 @@
 import { unified } from "unified";
-import "github-markdown-css/github-markdown-light.css";
-import "github-markdown-css/github-markdown-dark.css";
+// import "github-markdown-css/github-markdown-light.css";
+// import "github-markdown-css/github-markdown-dark.css";
 import matter from "gray-matter";
 import { Buffer } from "buffer";
 
@@ -38,10 +38,14 @@ export async function blogLoader(
       query: "?raw",
       import: "default",
     });
+    if (localStorage.theme === "dark") {
+      await import("github-markdown-css/github-markdown-dark.css");
+    } else {
+      await import("github-markdown-css/github-markdown-light.css");
+    }
 
     const raw = await allPaths[path](); // raw is string
     const { content } = matter(raw);
-
     const html = await unified()
       .use(remarkParse)
       .use(remarkMath)
