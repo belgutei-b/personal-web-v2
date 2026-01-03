@@ -78,6 +78,10 @@ li p {
   @apply text-black text-base dark:text-stone-200;
 }
 
+.project-link {
+  @apply border border-emerald-400 px-4 py-2 font-semibold;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
