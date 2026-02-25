@@ -20,13 +20,9 @@ import type { BlogType } from "../types/blog.types";
 
 (window as any).Buffer = Buffer;
 
-// function timeout(ms: number) {
-//   return new Promise((resolve) => setTimeout(resolve, ms));
-// }
-
 export async function blogLoader(
   blogTitle: string | undefined,
-  isDarkTheme: boolean
+  isDarkTheme: boolean,
 ) {
   try {
     if (!blogTitle) {
@@ -63,7 +59,6 @@ export async function blogLoader(
       .use(rehypeStringify)
       .process(content);
 
-    // await timeout(2000);
     // remark (parsing markdown)
     // rehype (highlighting)
     return String(html);
@@ -96,6 +91,7 @@ export async function getBlogs() {
     });
   }
 
-  // await timeout(3000);
+  blogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
   return blogs;
 }
