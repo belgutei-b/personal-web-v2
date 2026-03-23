@@ -46,7 +46,7 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="flex flex-col h-full p-4 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-blue-700 dark:hover:border-emerald-400 transition-colors duration-200">
       <div>
-        <div className="mb-1 text-black dark:text-stone-200">
+        <div className="mb-1 text-black dark:text-stone-200 text-base md:text-lg">
           {project.title}
         </div>
         <p className="leading-relaxed text-xs dark:text-stone-200 mt-4">

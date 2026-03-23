@@ -67,30 +67,41 @@ const terms = [
   },
 ];
 
+function TermCard({ term }: { term: (typeof terms)[number] }) {
+  return (
+    <div className="flex flex-col p-4 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-blue-700 dark:hover:border-emerald-400 transition-colors duration-200">
+      <div className="mb-3 text-black dark:text-stone-200 text-base md:text-lg">
+        {term.title}
+      </div>
+      <div className="flex flex-col gap-1">
+        {term.courses.map((course) => (
+          <span
+            key={course}
+            className="text-sm dark:text-stone-200 leading-relaxed"
+          >
+            <span className="text-blue-700 dark:text-emerald-400 font-medium mr-2">
+              ·
+            </span>
+            {course}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Uni() {
   return (
-    <div>
-      {terms.map((term) => {
-        return (
-          <div
-            key={term.title}
-            className="pt-0 md:pt-5 pb-5 border-b border-stone-300 px-2"
-          >
-            <p className="text-xl text-stone-700 font-semibold dark:text-emerald-400!">
-              {term.title}
-            </p>
-            <ul className="list-disc list-inside">
-              {term.courses.map((course) => {
-                return (
-                  <li key={course} className="mt-2">
-                    {course}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        );
-      })}
+    <div
+      className="px-2 md:px-0"
+      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+    >
+      <p className="mb-4 text-xl">University</p>
+      <div className="flex flex-col gap-4">
+        {terms.map((term) => (
+          <TermCard key={term.title} term={term} />
+        ))}
+      </div>
     </div>
   );
 }
