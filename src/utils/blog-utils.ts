@@ -18,7 +18,7 @@ import rehypeSlug from "rehype-slug";
 import "katex/dist/katex.min.css";
 import type { BlogType } from "../types/blog.types";
 
-(window as any).Buffer = Buffer;
+(window as Window & typeof globalThis & { Buffer: typeof Buffer }).Buffer = Buffer;
 
 export async function blogLoader(
   blogTitle: string | undefined,
@@ -62,7 +62,7 @@ export async function blogLoader(
     // remark (parsing markdown)
     // rehype (highlighting)
     return String(html);
-  } catch (err) {
+  } catch {
     return String("Not found");
   }
 }

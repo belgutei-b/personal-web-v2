@@ -1,105 +1,109 @@
-type ProjectType = {
+import { NavLink } from "react-router";
+import ExternalLinkSvg from "/src/js-public/external-link.svg?react";
+import GithubSvg from "/src/js-public/github.svg?react";
+
+type Project = {
   title: string;
-  img_src: string;
-  techs: string[];
   description: string;
-  links: {
-    link: string;
-    name: string;
-  }[];
+  techs: string[];
+  github?: string;
+  live?: string;
 };
 
-export default function Projects() {
-  const projects: ProjectType[] = [
-    {
-      title: "Dvine-Experience",
-      img_src: "/projects/dvine.png",
-      techs: ["Node.js", "TypeScript", "PostgreSQL", "Auth", "AWS"],
-      description: `A full-stack web application for Dvine to manage partner applications
-                    and host a directory of local businesses in Port Macquire.
-                    I worked in a team of 6, leading a back-end development. I implemented authentication, form submission workflow, and cloud infrastuctures setup.`,
-      links: [
-        { link: "https://github.com/", name: "Github" },
-        { link: "https://github.com/", name: "Blog" },
-      ],
-    },
-    {
-      title: "Year-Wrapped",
-      img_src: "/projects/wrapper.png",
-      techs: ["Next.js", "TypeScript", "PostgreSQL", "Auth"],
-      description:
-        "Year-Wrapped is a small full-stack web app for friends to reveal their best movies/songs/places of the past year.",
-      links: [
-        { link: "https://year-wrapped-six.vercel.app/", name: "Live" },
-        { link: "https://github.com/belgutei-b/year-wrapped", name: "Github" },
-        { link: "https://github.com/", name: "Blog" },
-      ],
-    },
-    {
-      title: "Safety-Website",
-      img_src: "/projects/wrapper.png",
-      techs: ["Next.js", "TypeScript", "MongoDB", "AWS"],
-      description: `A full-stack web application for a construction company to manage pre-start safety talks.
-                    This platform enabled managers to assign workers to job sites,
-                    while workers can review safety guidelines and digitally sign acknowledgements`,
-      links: [
-        { link: "https://github.com/belgutei-b/iscm-1.1", name: "Github" },
-        { link: "https://github.com/", name: "Blog" },
-      ],
-    },
-    // {
-    //   title: "Fuzzer",
-    //   img_src: "/projects/wrapper.png",
-    //   techs: ["Next.js", "TypeScript", "PostgreSQL", "Auth"],
-    //   description:
-    //     "Description Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
-    //   links: [
-    //     { link: "https://github.com/", name: "Live" },
-    //     { link: "https://github.com/", name: "Github" },
-    //     { link: "https://github.com/", name: "Blog" },
-    //   ],
-    // },
-  ];
-  return (
-    /*
-    Projects
-    1. year-wrapped
-    2. personal-web-v2
-    3. 3900 project
-    4. 6447 fuzzer
-    5. iscm project
-    
-    - short blog for each project
-    */
-    <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 justify-items-stretch space-y-8">
-      {projects.map((project) => {
-        return (
-          <div className="w-3/4 lg:w-7/8 justify-self-center border-neutral-400 dark:border-stone-500 border-2">
-            <img src={project.img_src} className="aspect-video" />
+const projects: Project[] = [
+  {
+    title: "Dvine Experiences",
+    description:
+      "A full-stack web application for Dvine Experiences to manage partner applications and host a directory of local businesses in Port Macquire. I worked in a team of 6, leading back-end development. I implemented authentication/autheroziation layers, form submission workflow, and cloud infrastructure setup (S3 for image/video storage and retrieval, and SES for email notification to admins and partners).",
+    techs: ["Node.js", "TypeScript", "PostgreSQL", "Auth", "AWS"],
+  },
+  {
+    title: "CPTracker",
+    description: "A time focused LeetCode tracker website.",
+    techs: ["React", "Next.js", "Prisma"],
+    github: "https://github.com/belgutei-b/cptracker",
+    live: "https://www.cptracker.org/",
+  },
+  {
+    title: "CPTracker Chrome Extension",
+    description: "",
+    techs: ["Typescript"],
+    github: "https://github.com/belgutei-b/cptracker-extension",
+    live: "https://chromewebstore.google.com/detail/ojpjlobnleonmgehlhoibaicokoadcnm?utm_source=item-share-cb",
+  },
+  {
+    title: "Safety Website for a construction company",
+    description:
+      "A full-stack web application for a construction company to manage pre-start safety talks. This platform enabled managers to assign workers to job sites, while workers could review safety guidelines and digitally sign acknowledgements.",
+    techs: ["Next.js", "TypeScript", "MongoDB", "AWS"],
+    github: "https://github.com/belgutei-b/2safety",
+  },
+];
 
-            <ul className="flex flex-wrap text-sm md:text-base space-x-1.5 p-1.5 border-b-2 dark:border-stone-600">
-              {project.techs.map((tech) => {
-                return <li>{tech}</li>;
-              })}
-            </ul>
-            <div className="p-2 md:p-2">
-              <p className="text-lg md:text-xl">{project.title}</p>
-              <p className="pt-2 md:pt-4 text-sm md:text-base">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4 mb-1">
-                {project.links.map((link) => {
-                  return (
-                    <a href={link.link} className="project-link">
-                      {link.name}
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        );
-      })}
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <div className="flex flex-col h-full p-4 border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-blue-700 dark:hover:border-emerald-400 transition-colors duration-200">
+      <div>
+        <div className="mb-1 text-black dark:text-stone-200">
+          {project.title}
+        </div>
+        <p className="leading-relaxed text-xs dark:text-stone-200 mt-4">
+          {project.description}
+        </p>
+      </div>
+      <div className="flex flex-wrap gap-x-1 mt-4">
+        {project.techs.map((tech, i) => (
+          <span
+            key={tech}
+            className="text-xs font-medium text-blue-700 dark:text-emerald-400"
+          >
+            {tech}
+            {i < project.techs.length - 1 && (
+              <span className="mx-1 text-blue-700 dark:text-emerald-400">
+                ·
+              </span>
+            )}
+          </span>
+        ))}
+      </div>
+      {(project.github || project.live) && (
+        <div className="flex gap-3 mt-4 pt-3 border-t border-stone-100 dark:border-stone-800">
+          {project.github && (
+            <NavLink
+              to={project.github}
+              target="_blank"
+              className="group flex items-center gap-1.5 p-2 text-sm border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-blue-700 dark:hover:border-emerald-400 transition-colors duration-150"
+            >
+              <GithubSvg className="w-4 h-4 fill-current text-stone-500 dark:text-stone-400 group-hover:text-blue-700 dark:group-hover:text-emerald-400" />
+            </NavLink>
+          )}
+          {project.live && (
+            <NavLink
+              to={project.live}
+              target="_blank"
+              className="group flex items-center gap-1.5 p-2 text-sm border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 hover:border-blue-700 dark:hover:border-emerald-400 transition-colors duration-150"
+            >
+              <ExternalLinkSvg className="w-4 h-4 text-stone-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-emerald-400" />
+            </NavLink>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function Projects() {
+  return (
+    <div
+      className="px-2 md:px-0"
+      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+    >
+      <p className="mb-4">Projects</p>
+      <div className="flex flex-col gap-4">
+        {projects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
+        ))}
+      </div>
     </div>
   );
 }
