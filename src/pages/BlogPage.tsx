@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { blogLoader } from "../utils/blog-utils";
 
 export default function BlogPage() {
-  const { blogTitle } = useParams();
+  // const { blogTitle } = useParams();
+  const { "*": blogTitle } = useParams();
   const [content, setContent] = useState<string | null>(null);
 
   useEffect(() => {

@@ -30,7 +30,7 @@ export async function blogLoader(
     }
 
     const path = `../posts/${blogTitle}.md`;
-    const allPaths = import.meta.glob("../posts/*.md", {
+    const allPaths = import.meta.glob("../posts/**/*.md", {
       query: "?raw",
       import: "default",
     });
@@ -68,10 +68,11 @@ export async function blogLoader(
 }
 
 export async function getBlogs() {
-  const allPostPaths = import.meta.glob("../posts/*.md", {
+  const allPostPaths = import.meta.glob("../posts/**/*.md", {
     query: "?raw",
     import: "default",
   });
+  console.log(allPostPaths)
 
   const rawBlogs = Object.keys(allPostPaths).map((path) => {
     return {

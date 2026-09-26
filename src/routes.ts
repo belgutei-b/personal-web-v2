@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         Component: Blogs,
       },
       {
-        path: "blogs/:blogTitle",
+        path: "blogs/*",
         Component: BlogPage,
       },
       {
