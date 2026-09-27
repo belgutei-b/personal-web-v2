@@ -12,6 +12,7 @@ import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
@@ -44,6 +45,7 @@ export async function blogLoader(
     const { content } = matter(raw);
     const html = await unified()
       .use(remarkParse)
+      .use(remarkGfm)
       .use(remarkMath)
       .use(remarkRehype)
       .use(rehypeSlug)
