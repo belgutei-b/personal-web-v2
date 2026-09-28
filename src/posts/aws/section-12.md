@@ -1,5 +1,5 @@
 ---
-title: 10. S3 Intro
+title: 12. S3 Intro
 date: 27 Sep, 2026
 tags: ["aws"]
 ---
